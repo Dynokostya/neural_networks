@@ -1,3 +1,6 @@
+import numpy as np
+
+
 def task1(x: int):
     # 1.1
     a: int = 1
@@ -40,4 +43,29 @@ def task1(x: int):
     print(factorial(5))
 
 
+def task2():
+    # 2.1
+    arr1 = np.array([1, 2])
+    arr2 = np.array([[1, 2], [3, 4]])
+    print('\n---2.1---')
+    print(arr1.shape)
+    print(arr2.shape)
+
+    # 2.2
+    print('\n---2.2---')
+    print(arr1 * 2)
+    print(arr2 + 1)
+
+    # 2.3
+    print('\n---2.3---')
+    arr3 = np.arange(0, 1, 0.1)
+    print(arr3)
+
+    # 2.4
+    arr4 = np.array([3, 4])
+    print('\n---2.4---')
+    print(arr1 * arr4)
+
+
 task1(1)
+task2()
