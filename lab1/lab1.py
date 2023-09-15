@@ -1,5 +1,10 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+from sklearn.datasets import load_wine
+
+wine = load_wine()
+wine_df = pd.DataFrame(data=wine.data, columns=wine.feature_names)
 
 
 def task1(x: int):
@@ -93,6 +98,52 @@ def task3():
     plt.show()
 
 
-task1(1)
-task2()
-task3()
+def task4():
+    # 4.1
+    wine_df['target'] = wine.target
+
+    # 4.2
+    print('\n---4.2---')
+    print(wine_df[:5])
+
+    # 4.3
+    print('\n---4.3---')
+    print(wine_df.describe())
+
+    # 4.4
+    class_counts = wine_df['target'].value_counts()
+    print('\n---4.4---')
+    print(class_counts)
+
+
+def task5():
+    # 5.1
+    mean_values = np.mean(wine_df, axis=0)
+    print('\n---5.1---')
+    print(mean_values)
+
+    # # 5.2, 5.4
+    # for col in wine_df.columns:
+    #     plt.hist(wine_df[col], bins=20)
+    #     plt.title(f'{col}')
+    #     plt.xlabel(col)
+    #     plt.ylabel('Frequency')
+    #     plt.show()
+
+    # 5.3
+    wine_df.boxplot(figsize=(12, 6), vert=False)
+    plt.title('Box plots')
+    plt.xlabel('Values')
+    plt.show()
+
+    # 5.5
+    correlation_matrix = wine_df.corr()
+    print('\n---5.5---')
+    print(correlation_matrix)
+
+
+# task1(1)
+# task2()
+# task3()
+# task4()
+task5()
