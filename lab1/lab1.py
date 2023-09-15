@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 def task1(x: int):
@@ -67,5 +68,31 @@ def task2():
     print(arr1 * arr4)
 
 
+def task3():
+    # 3.1-3.3
+    x = np.arange(-10, 10, 0.1)
+    y1 = x ** 2
+    y2 = x ** 3
+    plt.plot(x, y1, label='y = x^2')
+    plt.plot(x, y2, label='y = x^3')
+    plt.title('Functions')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    # 3.4
+    plt.clf()
+    np.random.seed(0)
+    data = np.random.normal(0, 1, 1000)
+    plt.hist(data, bins=20)
+    plt.title('Histogram')
+    plt.xlabel('Values')
+    plt.ylabel('Frequency')
+    plt.show()
+
+
 task1(1)
 task2()
+task3()
