@@ -122,13 +122,13 @@ def task5():
     print('\n---5.1---')
     print(mean_values)
 
-    # # 5.2, 5.4
-    # for col in wine_df.columns:
-    #     plt.hist(wine_df[col], bins=20)
-    #     plt.title(f'{col}')
-    #     plt.xlabel(col)
-    #     plt.ylabel('Frequency')
-    #     plt.show()
+    # 5.2, 5.4
+    for col in wine_df.columns:
+        plt.hist(wine_df[col], bins=20)
+        plt.title(f'{col}')
+        plt.xlabel(col)
+        plt.ylabel('Frequency')
+        plt.show()
 
     # 5.3
     wine_df.boxplot(figsize=(12, 6), vert=False)
