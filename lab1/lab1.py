@@ -142,8 +142,8 @@ def task5():
     print(correlation_matrix)
 
 
-# task1(1)
-# task2()
-# task3()
-# task4()
+task1(1)
+task2()
+task3()
+task4()
 task5()
