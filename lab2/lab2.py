@@ -98,7 +98,6 @@ def main(target_error):
 
     print('\n---Gradient Descent---')
     start = time.perf_counter()
-
     process = psutil.Process(gradient_descent(a, b, x_train, y_train, lr=0.1, target_error=target_error))
     print(f'Time elapsed: {time.perf_counter() - start} seconds')
     print(f'Memory usage: {process.memory_info().rss / 1024 / 1024} MBytes')
@@ -117,4 +116,4 @@ def main(target_error):
     print(f'Memory usage: {process.memory_info().rss / 1024 / 1024} MBytes')
 
 
-main(0.4)
+main(0.1)
