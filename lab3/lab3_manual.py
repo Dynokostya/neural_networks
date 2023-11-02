@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 
 # Визначаємо структуру мережі
 n_input = 64  # Кількість вхідних ознак для датасету digits
-n_hidden = 150
+n_hidden = 75
 n_output = 10  # Кількість класів для датасету digits
 
 # Завантаження датасету digits
@@ -141,7 +141,7 @@ def precision_recall_f1_multiclass_with_incorrect_classes(y_true, y_pred):
 
 # Для датасету digits
 W1, b1, W2, b2, loss_values_digits = train_multiclass_model(X_digits_train, Y_digits_train_encoded, n_input, n_hidden,
-                                                            n_output, num_iterations=1000, learning_rate=0.01)
+                                                            n_output, num_iterations=500, learning_rate=0.1)
 Y_digits_pred = predict_multiclass(X_digits_test, W1, b1, W2, b2)
 
 # Визначення точності, відгуку та F1-оцінки
