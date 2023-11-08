@@ -35,20 +35,20 @@ X_test_scaled = scaler.transform(X_test)
 # Creating the basic neural network model
 model = Sequential([
     # Xavier initialization
-    # Dense(64, input_shape=(X_train_scaled.shape[1],), activation='relu', kernel_initializer=GlorotUniform()),
+    Dense(64, input_shape=(X_train_scaled.shape[1],), activation='relu', kernel_initializer=GlorotUniform()),
     # Input layer with He initialization
-    Dense(64, input_shape=(X_train_scaled.shape[1],), activation='relu', kernel_initializer=HeNormal()),
+    # Dense(64, input_shape=(X_train_scaled.shape[1],), activation='relu', kernel_initializer=HeNormal()),
 
-    BatchNormalization(),
-    Dropout(0.5),
+    # BatchNormalization(),
+    # Dropout(0.5),
 
     # Hidden layers with L1 regularization
-    # Dense(64, activation='relu', kernel_regularizer=l1(0.01)),
+    Dense(64, activation='relu', kernel_regularizer=l1(0.01)),
     # Hidden layers with L2 regularization
-    Dense(64, activation='relu', kernel_regularizer=l2(0.01)),
+    # Dense(64, activation='relu', kernel_regularizer=l2(0.01)),
 
-    BatchNormalization(),
-    Dropout(0.3),
+    # BatchNormalization(),
+    # Dropout(0.3),
 
     # Output layer
     Dense(1)
